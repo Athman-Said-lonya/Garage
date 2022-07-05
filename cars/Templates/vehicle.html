@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <meta charset="UTF-8">
+    <title>Vehicle</title>
+</head>
+<body>
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <div>
+    <label for="vehicle_name"><b>vehicle name:</b></label>
+    <input type="text" placeholder="Enter your vehicle name" id="Vehicle_name" name="vehicle_name" required><br>
+    </div>
+
+    <div>
+        <label for="VehicleModel_number"><b>Vehicle model number:</b></label>
+        <input type="text" placeholder="Enter your vehicle model number" id="VehicleModel_number" name="VehicleModel_number" required><br>
+    </div>
+
+    <div>
+        <label for="vehicle_problem"><b>Vehicle Problem:</b></label>
+        <input type="text" placeholder="Describe your vehicle problem" id="vehicle_problem" name="Vehicle_problem" required><br>
+    </div>
+
+    <div>
+        <label for="Date"><b>Date:</b></label>
+        <input type="date" id="Date" data-date-inline picker="true" name="Date"><br>
+    </div>
+    <button type="Submitt">Submitt</button>
+</form>
+
+{% endblock %}
+
+</body>
+</html>

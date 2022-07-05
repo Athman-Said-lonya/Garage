@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title> </title>
+</head>
+
+<body>
+
+{% block content %}
+<h1>Garage Management Information System</h1>
+<form method="POST" action="/vehicle">
+    {% csrf_token %}
+    <div>
+    <label for="firstname"><b>Firstname:</b></label>
+    <input type="text" placeholder="Enter user name" id="Firstname" name="firstname" required>
+    </div>
+
+    <div>
+    <label for="lastname"><b>Lastname:</b></label>
+    <input type="text" placeholder="Enter lastname" id="Lastname" name="lastname" required><br>
+    </div>
+
+    <div>
+        <label for="Email"><b>Email:</b></label>
+        <input type="text" placeholder="Enter your email" id="Email" name="Email" required><br>
+    </div>
+    <div>
+        <label for="Password"><b>Password:</b></label>
+        <input type="text" placeholder="Enter your password" id="password" name="Password" required><br>
+    </div>
+
+    <div>
+        <label for="ContactNumber"><b>Contact No:</b></label>
+        <input type="text" placeholder="Enter your contact number" id="ContactNumber" name="ContactNumber" required><br>
+    </div>
+
+    <div>
+        <label for="Location"><b>Location:</b></label>
+        <input type="text"  name="Location" id="Location" required><br>
+    </div>
+    <div>
+        <label for="Gender"><b>Gender:</b></label>
+        <input type="text" placeholder="Enter your Gender" id="Gender" name="Gender" required><br>
+    </div>
+
+    <button type="submitt">Register</button>
+
+
+</form>
+
+{% endblock %}
+</body>
+</html>
